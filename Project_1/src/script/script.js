@@ -17,4 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year]").forEach((element) => {
     element.textContent = new Date().getFullYear();
   });
+
+  const insightItems = document.querySelectorAll(".insight-item");
+  insightItems.forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      insightItems.forEach((other) => {
+        if (other !== item) other.removeAttribute("open");
+      });
+      item.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  });
 });
