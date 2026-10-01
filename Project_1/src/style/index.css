@@ -39,5 +39,25 @@ em { color:var(--orange); font-family:Georgia, serif; font-weight:400; }
 .rating-visual { align-items:center; background:var(--gold); border:12px solid #eab84b; border-radius:50%; display:flex; flex-direction:column; flex:none; height:220px; justify-content:center; transform:rotate(8deg); width:220px; }.rating-visual span,.rating-visual small { font-size:11px; font-weight:bold; letter-spacing:.18em; }.rating-visual strong { font-size:100px; line-height:1; }
 .comparison-grid { display:grid; gap:16px; grid-template-columns:repeat(3,1fr); margin-top:40px; }.comparison-card { border:1px solid var(--line); padding:26px; }.comparison-card.featured { background:var(--cream); border-color:var(--orange); }.screen-tag { color:#a16f1f; font-size:10px; font-weight:bold; letter-spacing:.15em; }.comparison-card h3 { font-size:34px; margin:25px 0 14px; }.comparison-card strong { display:block; font-size:20px; }.comparison-card small { color:var(--muted); }.meter { background:#eadfce; height:8px; margin:0 0 19px; }.meter i { background:var(--orange); display:block; height:100%; }
 .data-note { align-items:flex-start; background:var(--cream); display:flex; gap:15px; margin-top:28px; padding:18px 22px; }.data-note p { color:var(--muted); font-size:13px; margin:0; }.note-icon { border:1px solid var(--orange); border-radius:50%; color:#a16f1f; flex:none; font-weight:bold; height:22px; text-align:center; width:22px; }
+.insights-section { border-top:1px solid var(--line); }
+.insight-stat-grid { grid-template-columns:repeat(4,1fr); margin-top:36px; }
+.insight-list { display:grid; gap:14px; margin-top:46px; }
+.insight-item { background:var(--cream); border:1px solid var(--line); overflow:hidden; transition:border-color .2s, box-shadow .2s; }
+.insight-item[open] { border-color:var(--orange); box-shadow:0 10px 30px -18px rgba(41,36,30,.35); }
+.insight-item summary { align-items:center; cursor:pointer; display:flex; gap:18px; list-style:none; padding:22px 26px; }
+.insight-item summary::-webkit-details-marker { display:none; }
+.insight-item summary::marker { content:""; }
+.insight-item summary:hover .insight-q { color:#a16f1f; }
+.insight-no { color:var(--orange); flex:none; font-size:13px; font-weight:800; width:26px; }
+.insight-q { color:var(--ink); flex:1; font-size:16px; font-weight:700; letter-spacing:-.01em; transition:color .2s; }
+.insight-toggle { color:var(--muted); flex:none; font-size:22px; font-weight:800; line-height:1; transition:transform .25s, color .2s; }
+.insight-item[open] .insight-toggle { color:var(--orange); transform:rotate(45deg); }
+.insight-body { display:grid; gap:30px; grid-template-columns:1.15fr .85fr; padding:2px 26px 32px; }
+.insight-figure { background:var(--paper); border:1px solid var(--line); margin:0; overflow:hidden; }
+.insight-figure img { display:block; width:100%; }
+.insight-answer { align-self:center; color:var(--muted); font-size:15px; }
+.insight-answer strong { color:var(--ink); }
+@media (max-width:900px) { .insight-stat-grid { grid-template-columns:repeat(2,1fr); } .insight-body { grid-template-columns:1fr; } }
+@media (max-width:700px) { .insight-stat-grid { grid-template-columns:1fr; } .insight-item summary { padding:18px; } .insight-body { padding:0 18px 24px; } .insight-q { font-size:15px; } }
 .site-footer { border-top:1px solid var(--line); color:var(--muted); display:flex; font-size:11px; justify-content:space-between; letter-spacing:.05em; padding:22px max(28px, calc((100% - 1124px)/2)); }
 @media (max-width:700px) { .nav-shell, .site-footer { align-items:flex-start; flex-direction:column; gap:15px; }.nav-shell nav { flex-wrap:wrap; gap:0; }.nav-shell nav a { padding:7px 9px 7px 0; }.hero { min-height:590px; padding-top:65px; }.hero-orbit { opacity:.5; right:-170px; top:270px; transform:scale(.7); }.intro-section,.about-grid,.split-content { gap:28px; grid-template-columns:1fr; }.stat-grid,.principle-grid,.comparison-grid { grid-template-columns:1fr; }.page-hero { align-items:flex-start; flex-direction:column; gap:30px; min-height:520px; padding-top:65px; }.rating-visual { height:150px; width:150px; }.rating-visual strong { font-size:68px; }.dark-section { padding-bottom:65px; padding-top:65px; } }
