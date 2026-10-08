@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An interactive look at television energy use and Australian electricity spot prices.">
+    <title>Power &amp; Pixels | Energy insights</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#overview" aria-label="Power and Pixels home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>POWER<span class="brand-amp">&amp;</span>PIXELS</span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>ENERGY DATA JOURNAL</span>
+          <span class="topbar-divider" aria-hidden="true"></span>
+          <span>EXPLORATION 05</span>
+        </div>
+      </header>
+
+      <main id="overview">
+        <section class="intro">
+          <div class="intro-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A closer look at consumption</p>
+            <h1>Powering the<br><span>picture.</span></h1>
+            <p class="intro-text">What we watch has a footprint. Explore how screen technology shapes television energy use, and how Australia's spot electricity prices have shifted over time.</p>
+          </div>
+          <div class="intro-aside">
+            <div class="aside-orbit" aria-hidden="true">
+              <span class="orbit orbit-one"></span>
+              <span class="orbit orbit-two"></span>
+              <span class="orbit-core"><span></span></span>
+              <span class="orbit-spark"></span>
+            </div>
+            <p>DATA, MADE<br><strong>VISIBLE.</strong></p>
+          </div>
+        </section>
+
+        <section class="summary-strip" aria-label="Dataset overview">
+          <div class="summary-item">
+            <span class="summary-number" id="profile-count">—</span>
+            <span class="summary-label">TV profiles</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-number">3</span>
+            <span class="summary-label">Screen technologies</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-number" id="year-range">—</span>
+            <span class="summary-label">Years of spot prices</span>
+          </div>
+          <div class="summary-note"><span class="summary-star">✳</span> Four views. One energy story.</div>
+        </section>
+
+        <section class="chart-grid" aria-label="Energy data visualizations">
+          <article class="chart-card scatter-card">
+            <div class="card-heading">
+              <div>
+                <p class="chart-index">01 <span>/ TELEVISION EFFICIENCY</span></p>
+                <h2>More screen, more energy?</h2>
+                <p class="chart-description">Annual consumption against star rating for each TV profile.</p>
+              </div>
+              <span class="chart-type">SCATTER</span>
+            </div>
+            <div class="chart-legend" aria-label="Screen technology legend">
+              <span><i class="legend-dot lcd"></i>LCD</span>
+              <span><i class="legend-dot led"></i>LED</span>
+              <span><i class="legend-dot oled"></i>OLED</span>
+              <span class="legend-size">Bubble size = profile count</span>
+            </div>
+            <div class="chart-area" id="scatter-chart" role="img" aria-label="Scatter plot of television energy consumption and star rating"></div>
+            <footer class="card-footer"><span>LOWER CONSUMPTION <b>←</b></span><span>ENERGY CONSUMPTION (kWh/year)</span></footer>
+          </article>
+
+          <article class="chart-card donut-card">
+            <div class="card-heading">
+              <div>
+                <p class="chart-index">02 <span>/ ALL TV PROFILES</span></p>
+                <h2>Where the energy adds up</h2>
+                <p class="chart-description">Estimated combined annual use across listed profiles, by screen technology.</p>
+              </div>
+              <span class="chart-type">DONUT</span>
+            </div>
+            <div class="chart-area donut-area" id="donut-chart" role="img" aria-label="Donut chart of combined television energy use by screen technology"></div>
+            <footer class="card-footer"><span>ENERGY USE IS WEIGHTED BY PROFILE COUNT</span><span>kWh / YEAR</span></footer>
+          </article>
+
+          <article class="chart-card bar-card">
+            <div class="card-heading">
+              <div>
+                <p class="chart-index">03 <span>/ 55-INCH TELEVISIONS</span></p>
+                <h2>Same size, different appetite</h2>
+                <p class="chart-description">Average labelled annual energy consumption for 55-inch TVs.</p>
+              </div>
+              <span class="chart-type">BAR</span>
+            </div>
+            <div class="chart-area" id="bar-chart" role="img" aria-label="Bar chart of average energy consumption by screen technology for 55-inch televisions"></div>
+            <footer class="card-footer"><span>AVERAGE LABELLED CONSUMPTION</span><span>kWh / YEAR</span></footer>
+          </article>
+
+          <article class="chart-card line-card">
+            <div class="card-heading">
+              <div>
+                <p class="chart-index">04 <span>/ AUSTRALIAN ENERGY MARKET</span></p>
+                <h2>The changing price of power</h2>
+                <p class="chart-description">Average annual spot price from 1998 to 2024.</p>
+              </div>
+              <span class="chart-type">LINE</span>
+            </div>
+            <div class="chart-area" id="line-chart" role="img" aria-label="Line chart of average Australian electricity spot prices from 1998 to 2024"></div>
+            <footer class="card-footer"><span>AVERAGE PRICE (EXCLUDES TASMANIA &amp; SNOWY)</span><span>$ / MWh</span></footer>
+          </article>
+        </section>
+
+        <p class="data-status" id="data-status" role="status">Loading the Ex5 datasets…</p>
+      </main>
+
+      <footer class="site-footer">
+        <span>POWER &amp; PIXELS <span class="footer-separator">/</span> DATA VISUALISATION</span>
+        <span>Source: Ex5 television energy &amp; ARE spot price datasets</span>
+      </footer>
+    </div>
+  </body>
+</html>
