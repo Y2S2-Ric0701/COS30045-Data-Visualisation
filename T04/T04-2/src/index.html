@@ -10,7 +10,7 @@
 </head>
 <body data-page="home">
   <header class="site-header">
-    <section class="nav-shell">
+    <div class="nav-shell">
       <a class="brand" href="index.html" data-page-link="home" aria-label="Powerwise home">
         <img src="images/PowerIcon.png" alt="" class="brand-mark">
         <span>POWERWISE</span>
@@ -20,18 +20,42 @@
         <a href="television.html" data-page-link="televisions">Televisions</a>
         <a href="about.html" data-page-link="about">About us</a>
       </nav>
-    </section>
+    </div>
   </header>
 
-  <h1>Appliance Energy Consumption</h1>
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">APPLIANCE ENERGY CONSUMPTION</p>
+        <h1>Know your power<br><em>before you plug in.</em></h1>
+        <p class="hero-copy">Purchasing a low energy consumption TV will help with your energy bills! Start by seeing which brands put the most models on the Australian market.</p>
+        <a class="button button-primary" href="television.html" data-page-link="televisions">Explore televisions <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="rating-visual" aria-label="Illustration of a six star energy rating"><span>ENERGY</span><strong>6</strong><small>STARS</small></div>
+    </section>
 
-  <div id="content"></div>
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">BRANDS AT A GLANCE</p>
+        <h2>Who registers<br><em>the most models?</em></h2>
+        <p class="section-lede">Number of registered television models for the ten most common brands in the Australian registration dataset.</p>
+      </div>
 
-  <!-- Give the SVG a size so shapes can be seen -->
-  <svg width="300" height="150"></svg>
+      <!-- T04-7: Bar chart of TV models per brand (top 10) -->
+      <figure class="chart-card">
+        <div class="responsive-svg-container"></div>
+        <figcaption>Registered television models by brand (top 10)</figcaption>
+      </figure>
 
-  <!-- Load D3 first, then your D3 code file -->
+      <div class="data-note"><span class="note-icon">i</span><p><strong>How to read this:</strong> brand names appear as registered, so variants such as "Samsung", "SAMSUNG" and "SAMSUNG ELECTRONICS" are counted separately. A higher count means a wider model range, not higher energy use.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>© <span data-year></span> Powerwise</span><span>Designed by Ricardo</span><span>COS30045 DATA VISUALISATION</span></footer>
+
+  <!-- Load D3 first, then the loader, then the chart function -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="./script/energy-d3.js"></script>
+  <script src="./script/t04-4-load.js"></script> <!-- loads CSV, then calls createBarChart -->
+  <script src="./script/t04-5-bars.js"></script> <!-- defines createBarChart -->
 </body>
 </html>
